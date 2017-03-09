@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>comtest</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+<filter>  
+    <filter-name>EncodingFilter</filter-name>  
+    <filter-class>filters.SetCharacterEncodingFilter</filter-class>  
+    <init-param>  
+       <param-name>encoding</param-name>  
+       <param-value>utf-8</param-value>  
+    </init-param>  
+</filter>  
+  
+<filter-mapping>  
+   <filter-name>EncodingFilter</filter-name>  
+   <url-pattern>/*</url-pattern>  
+</filter-mapping>
+
+
+<filter>  
+    <filter-name>LoginFilter</filter-name>  
+    <filter-class>filters.LoginFilter</filter-class> 
+    <init-param>  
+       <param-name>loginfilter</param-name>  
+       <param-value>qinghai</param-value>  
+    </init-param>   
+</filter>  
+  
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/admin_manage.jsp</url-pattern>  
+</filter-mapping>
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/student_homepage.jsp</url-pattern>  
+</filter-mapping>
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/teacher_homepage.jsp</url-pattern>  
+</filter-mapping>
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/questionBank.jsp</url-pattern>  
+</filter-mapping> 
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/studentBank.jsp</url-pattern>  
+</filter-mapping> 
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/teacherBank.jsp</url-pattern>  
+</filter-mapping> 
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/addQuestion.jsp</url-pattern>  
+</filter-mapping>
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/exercise.jsp</url-pattern>  
+</filter-mapping>
+<filter-mapping>  
+   <filter-name>LoginFilter</filter-name>  
+   <url-pattern>/test.jsp</url-pattern>  
+</filter-mapping>
+   
+  
+  
+   <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>action.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login.action</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>action.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register.action</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>StudentServlet</servlet-name>
+    <servlet-class>action.StudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentServlet</servlet-name>
+    <url-pattern>/student.action</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>TeacherServlet</servlet-name>
+    <servlet-class>action.TeacherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TeacherServlet</servlet-name>
+    <url-pattern>/teacher.action</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>QuestionServlet</servlet-name>
+    <servlet-class>action.QuestionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QuestionServlet</servlet-name>
+    <url-pattern>/question.action</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>ExerciseServlet</servlet-name>
+    <servlet-class>action.ExerciseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExerciseServlet</servlet-name>
+    <url-pattern>/exercise.action</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>ImageServlet</servlet-name>
+    <servlet-class>action.ImageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>action.TestServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ImageServlet</servlet-name>
+    <url-pattern>/image.action</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/test.action</url-pattern>
+  </servlet-mapping>
+</web-app>
